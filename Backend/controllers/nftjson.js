@@ -9,25 +9,28 @@ router.get("/", (req, res) => {
 
     NFT.find({})
    .then(nfts => res.json(nfts))
+
    .catch(console.error);
 
    
 })
 //Create Route
 //----------------------------------------------------------------------
+
 router.post('/', (req, res) => {
+
     
     console.log(req.body)
 
     NFT.create(req.body)
         .then(res => {
             res.send(req.body)
+
         })
         .catch(console.error)
     })
 
 //--------------------------------------------------------------------
-
 
 //Show 1 Specific NFT (Must Be Last Get Route)
 
@@ -84,6 +87,7 @@ router.delete('/:id', (req, res) => {
         })
         .catch(console.error)
 })
+
 
 
     module.exports = router   
