@@ -3,13 +3,21 @@ const router = express.Router()
 
 
 const NFT = require('../models/nft')
-
+const Collect = require('../models/collections')
 //INDEX Route
 //-------------------------------------------------------------------
-router.get("/", (req, res) => {
+router.get("/json", (req, res) => {
 
     NFT.find({})
    .then(nfts => res.json(nfts)) // changed all .then,.send to .json
+   .catch(console.error);
+
+   
+})
+router.get("/collection", (req, res) => {
+
+    Collect.find({})
+   .then(collects => res.json(collects)) // changed all .then,.send to .json
    .catch(console.error);
 
    
