@@ -18,14 +18,12 @@ router.get("/", (req, res) => {
 //----------------------------------------------------------------------
 
 router.post('/', (req, res) => {
-
     
     console.log(req.body)
 
     NFT.create(req.body)
         .then(res => {
             res.send(req.body)
-
         })
         .catch(console.error)
     })

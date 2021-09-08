@@ -19,10 +19,12 @@ router.get("/", (req, res) => {
 router.post('/new', (req, res) => {
     
     console.log(req.body)
-
+    console.log("hello")
     NFT.create(req.body)
-        .then(nfts => {
-            res.redirect('/nftmarketplace/gallery')
+        .then((nfts) => {
+            res.json(nfts)
+            console.log(req.body)
+            console.log("hello")
         })
         .catch(console.error)
     })
