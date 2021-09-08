@@ -3,18 +3,35 @@ const router = express.Router()
 
 const NFT = require('../models/nft')
 
-
-
+//INDEX Route
+//-------------------------------------------------------------------
 router.get("/", (req, res) => {
 
     NFT.find({})
-   .then(nfts => res.send(nfts))
+   .then(nfts => res.json(nfts))
    .catch(console.error);
 
    
 })
+//Create Route
+//----------------------------------------------------------------------
+router.post('/', (req, res) => {
+    
+    console.log(req.body)
 
-router.get('/:id/person', (req, res) => {
+    NFT.create(req.body)
+        .then(res => {
+            res.send(req.body)
+        })
+        .catch(console.error)
+    })
+
+//--------------------------------------------------------------------
+
+
+//Show 1 Specific NFT (Must Be Last Get Route)
+
+router.get('/:id', (req, res) => {
     
     console.log(`params ID: ${req.params.id}`)
     NFT.findById(req.params.id)
@@ -27,11 +44,46 @@ router.get('/:id/person', (req, res) => {
         })
 })
 
+//Edit NFT
+//------------------------------------------------------------------------
 
+router.get('/:id/nftedit', (req, res) => {
 
+    const id = req.params.id
+    NFT.findById(id)
+        .then( nfts => {
+            res.send(nfts)
+        })
+        .catch(console.error)
+} )
 
+router.put('/:id/nftedit' ,(req, res) => {
+    // res.send(`you made it to a PUT on id: ${req.params.id}`)
+    const id = req.params.id
+    NFT.findOneAndUpdate(
+        {_id: id},
+        {
+            title: req.body.title,
+            complete: req.body.complete === 'on'
+        },
+        {new: true}
+    )
+        .then( nfts => {
+            res.send(nfts)
+        })
+        .catch(console.error)
+        })
 
-//Delete Route
-//-------------------------------------------------------------------
+//---------------------------------------------------------------------------------
+// //Delete NFT  Routes
+
+router.delete('/:id', (req, res) => {
+    NFT.findByIdAndRemove({_id: req.params.id})
+        .then( () => {
+            res.redirect('/')
+        })
+        .catch(console.error)
+})
+
 
     module.exports = router   
