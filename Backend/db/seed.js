@@ -38,25 +38,25 @@ NFT.deleteMany({})
 
 
 
-Collect.deleteMany({})
-    .then(() => Collect.insertMany(collectionsData))
-    .then(console.log)
-    .catch(console.error)
-    .finally(() => process.exit())
-
-
-
-// User.deleteMany({})
-//     .then(() => User.insertMany(userData))
+// Collect.deleteMany({})
+//     .then(() => Collect.insertMany(collectionsData))
 //     .then(console.log)
 //     .catch(console.error)
-//     .finally(()=> process.exit())
+//     .finally(() => process.exit())
 
-// User1.deleteMany({})
-// .then(() => User1.insertMany(user1Data))
-// .then(console.log)
-// .catch(console.error)
-// .finally(()=> process.exit())
+
+
+User.deleteMany({})
+    .then(() => User.insertMany(userData))
+    .then(console.log)
+    .catch(console.error)
+    .finally(()=> process.exit())
+
+User1.deleteMany({})
+.then(() => User1.insertMany(user1Data))
+.then(console.log)
+.catch(console.error)
+.finally(()=> process.exit())
 
 
 
