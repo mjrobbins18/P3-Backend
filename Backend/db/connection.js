@@ -7,7 +7,7 @@ const mongoURI =
 
 mongoose.Promise = Promise
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useCreatIndex: true, useUnifiedTopology: true, useFindAndModify: false,})
+mongoose.connect(mongoURI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false,})
 
 .then((conn) => {
 	console.log(`connected to mongodb on ${conn.connections[0].name} db`)
