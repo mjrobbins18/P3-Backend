@@ -1,42 +1,36 @@
 const express = require('express')
 const router = express.Router()
 
-
 const NFT = require('../models/nft')
-const Collect = require('../models/collections')
+
 //INDEX Route
 //-------------------------------------------------------------------
-router.get("/json", (req, res) => {
+router.get("/", (req, res) => {
 
     NFT.find({})
-   .then(nfts => res.json(nfts)) // changed all .then,.send to .json
-   .catch(console.error);
+   .then(nfts => res.json(nfts))
 
-   
-})
-router.get("/collection", (req, res) => {
-
-    Collect.find({})
-   .then(collects => res.json(collects)) // changed all .then,.send to .json
    .catch(console.error);
 
    
 })
 //Create Route
 //----------------------------------------------------------------------
-router.post('/new', (req, res) => {
+
+router.post('/', (req, res) => {
+
     
     console.log(req.body)
 
     NFT.create(req.body)
-        .then(nfts => {
-            res.redirect('/nftmarketplace/gallery')
+        .then(res => {
+            res.send(req.body)
+
         })
         .catch(console.error)
     })
 
 //--------------------------------------------------------------------
-
 
 //Show 1 Specific NFT (Must Be Last Get Route)
 
@@ -60,8 +54,8 @@ router.get('/:id/nftedit', (req, res) => {
 
     const id = req.params.id
     NFT.findById(id)
-        .then( people => {
-            res.json(nfts)
+        .then( nfts => {
+            res.send(nfts)
         })
         .catch(console.error)
 } )
@@ -78,7 +72,7 @@ router.put('/:id/nftedit' ,(req, res) => {
         {new: true}
     )
         .then( nfts => {
-            res.json(nfts)
+            res.send(nfts)
         })
         .catch(console.error)
         })
@@ -89,9 +83,11 @@ router.put('/:id/nftedit' ,(req, res) => {
 router.delete('/:id', (req, res) => {
     NFT.findByIdAndRemove({_id: req.params.id})
         .then( () => {
-            res.redirect('/nftmarketplace/gallery')
+            res.redirect('/')
         })
         .catch(console.error)
 })
+
+
 
     module.exports = router   
