@@ -30,19 +30,20 @@ const userData = usersData.map (
 
 
 
-// NFT.deleteMany({})
-//     .then(() => NFT.insertMany(assetsData))
-//     .then(console.log)
-//     .catch(console.error)
-//     .finally(() => process.exit())
+NFT.deleteMany({})
+    .then(() => NFT.insertMany(assetsData))
+    .then(console.log)
+    .catch(console.error)
+    .finally(() => process.exit())
 
 
 
-// Collect.deleteMany({})
-//     .then(() => Collect.insertMany(collectionsData))
-//     .then(console.log)
-//     .catch(console.error)
-//     .finally(() => process.exit())
+Collect.deleteMany({})
+    .then(() => Collect.insertMany(collectionsData))
+    .then(console.log)
+    .catch(console.error)
+    .finally(() => process.exit())
+
 
 
 // User.deleteMany({})
@@ -56,6 +57,7 @@ const userData = usersData.map (
 // .then(console.log)
 // .catch(console.error)
 // .finally(()=> process.exit())
+
 
 
 // Contract.deleteMany({})
