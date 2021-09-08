@@ -46,34 +46,31 @@ router.get('/:id', (req, res) => {
             res.send("something has gone terribly wrong!")
         })
 })
+// show nft by name
+
+router.get('/name/:name', (req, res) => {
+    NFT.find({name: req.params.name})
+    .then(nfts => {
+        res.json(nfts)
+    })
+    .then(req => console.log(req))
+    .catch(console.error)
+})
 
 //Edit NFT
 //------------------------------------------------------------------------
 
-router.get('/:id/nftedit', (req, res) => {
-
-    const id = req.params.id
-    NFT.findById(id)
-        .then( people => {
-            res.send(nfts)
-        })
-        .catch(console.error)
-} )
-
-router.put('/:id/nftedit' ,(req, res) => {
-    // res.send(`you made it to a PUT on id: ${req.params.id}`)
-    const id = req.params.id
+router.put('/:id' ,(req, res) => {
+   
     NFT.findOneAndUpdate(
-        {_id: id},
-        {
-            title: req.body.title,
-            complete: req.body.complete === 'on'
-        },
+        {_id: req.params.id},
+        req.body,
         {new: true}
     )
         .then( nfts => {
-            res.send(nfts)
+            res.json(nfts)
         })
+        .then(req => console.log(req.body))
         .catch(console.error)
         })
 
@@ -81,10 +78,11 @@ router.put('/:id/nftedit' ,(req, res) => {
 // //Delete NFT  Routes
 
 router.delete('/:id', (req, res) => {
-    NFT.findByIdAndRemove({_id: req.params.id})
-        .then( () => {
-            res.redirect('/nftmarketplace/gallery')
+    NFT.findByIdAndDelete({_id: req.params.id})
+        .then((nfts) => {
+            res.json(nfts)
         })
+        .then((req) => console.log(req))
         .catch(console.error)
 })
 
