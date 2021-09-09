@@ -21,6 +21,13 @@ const nftjsonController = require('./controllers/nftjson')
 
 const nftSendsController = require('./controllers/nftsends')
 app.use('/nftmarketplace', nftsController)
+//login token
+
+app.use('/login', (req,res) => {
+  res.send({
+    token: 123456789
+  })
+} )
 // app.use('/nftmarketplace', nftjsonController)
 // app.use('/nftmarketplace', nftSendsController)
 // app.use('/nftmarketplace', usersController)

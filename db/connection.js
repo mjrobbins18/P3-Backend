@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+
 url = "mongodb+srv://dbUser:n6DaQ5TP7VjQ76m@cluster0.i0e2s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 const mongoURI =
   process.env.NODE_ENV === 'production'

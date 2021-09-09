@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 
    
 })
-
+//get collections
 router.get('/collections', (req, res) => {
     Collection.find({})
     .then(collects => res.send(collects))
