@@ -20,9 +20,9 @@ const usersController = require('./controllers/users')
 const nftjsonController = require('./controllers/nftjson')
 
 const nftSendsController = require('./controllers/nftsends')
-// app.use('/nftmarketplace', nftsController)
+app.use('/nftmarketplace', nftsController)
 // app.use('/nftmarketplace', nftjsonController)
-app.use('/nftmarketplace', nftSendsController)
+// app.use('/nftmarketplace', nftSendsController)
 // app.use('/nftmarketplace', usersController)
 /* END CONTROLLERS HERE */
 

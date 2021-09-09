@@ -30,40 +30,27 @@ router.get("/gallery", (req, res) => {
 //Create Route JSON
 router.get("/new", (req, res) => {
 
-    NFT.find({})
-   .then(nfts => res.json(nfts))
-   .catch(console.error);
-
-   
+    res.render('./nftmarketplace/new')
 })
 router.post('/new', (req, res) => {
     
     console.log(req.body)
 
     NFT.create(req.body)
-        .then(nfts => {
-            res.redirect('/nftmarketplace/gallery')
-        })
-        .catch(console.error)
+    .then((nfts) => {
+        res.json(nfts)
     })
+    // .then(() => {
+    //         res.redirect('/nftmarketplace/gallery')
+    //     })
+    //     .catch(console.error)
+    })
+//Creat New User
+//----------------------------------------------------------------------------
+router.get("/signup", (req, res) => {
 
-// Create Route Views---------------------------
-router.get('/new', (req, res) => {
-    // No Database action here
-    res.render('./nftmarketplace/new') //no info passing in here
+    res.render('./nftmarketplace/signup')
 })
-
-router.post('/', (req, res) => {
-    
-    console.log(req.body)
-
-    NFT.create(req.body)
-        .then( nfts => {
-            res.redirect('./nftmarketplace/gallery')
-        })
-        .catch(console.error)
-})
-
 //Edit NFT
 //------------------------------------------------------------------------
 
