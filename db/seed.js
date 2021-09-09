@@ -11,30 +11,30 @@ const User1 = require('../models/user1')
 const Contract = require('../models/contract')
 //---------------------------------------------------------------------------------------------------
 
-const userData = usersData.map (
-    item =>
-      item.owner.username &&
-        item.owner.profile_img_url &&
-        item.seller.username &&
-        item.seller.profile_img_url &&
-        item.seller.address
-        ? {
-            ownerUsername: item.owner.username,
-            ownerPic: item.owner.profile_img_url,
-            creatorUsername: item.seller.username,
-            creatorPic: item.seller.profile_img_url,
-            creatorAddress: item.seller.address
-          }
-        : null
-  );
+// const userData = usersData.map (
+//     item =>
+//       item.owner.username &&
+//         item.owner.profile_img_url &&
+//         item.seller.username &&
+//         item.seller.profile_img_url &&
+//         item.seller.address
+//         ? {
+//             ownerUsername: item.owner.username,
+//             ownerPic: item.owner.profile_img_url,
+//             creatorUsername: item.seller.username,
+//             creatorPic: item.seller.profile_img_url,
+//             creatorAddress: item.seller.address
+//           }
+//         : null
+//   );
 
 
 
-NFT.deleteMany({})
-    .then(() => NFT.insertMany(assetsData))
-    .then(console.log)
-    .catch(console.error)
-    .finally(() => process.exit())
+// NFT.deleteMany({})
+//     .then(() => NFT.insertMany(assetsData))
+//     .then(console.log)
+//     .catch(console.error)
+//     .finally(() => process.exit())
 
 
 
@@ -46,11 +46,11 @@ NFT.deleteMany({})
 
 
 
-User.deleteMany({})
-    .then(() => User.insertMany(userData))
-    .then(console.log)
-    .catch(console.error)
-    .finally(()=> process.exit())
+// User.deleteMany({})
+//     .then(() => User.insertMany(userData))
+//     .then(console.log)
+//     .catch(console.error)
+//     .finally(()=> process.exit())
 
 User1.deleteMany({})
 .then(() => User1.insertMany(user1Data))
