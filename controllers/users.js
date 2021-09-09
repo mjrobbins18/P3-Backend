@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const keys = require('../models/keys');
 // Load input validation
 
-
+const token = Math.floor(Math.random()*10000000)
 
 const validateRegisterInput = require("../register");
 const validateLoginInput = require("../login");
@@ -48,7 +48,7 @@ User.findOne({ username: req.body.username})
         })
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(newUser.password, salt, (err, hash) => {
-                if (err) throw err;
+                if (err){console.log(err)};
                 newUser.password = hash
                 newUser
                 .save()
@@ -89,7 +89,7 @@ router.post('/login', (req, res) => {
                     {
                         expiresIn: 958209485094
                     },
-                    (err,token) => {
+                    (err) => {
                         res.json({
                             success: true,
                             token: "Bearer" + token
