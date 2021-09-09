@@ -13,7 +13,7 @@ const validateLoginInput = require("../login");
 
 // Load User model
 
-const User = require('../models/user1')
+const User = require('../models/newuser')
 
 router.get("/", (req, res) => {
 
