@@ -5,8 +5,11 @@ const jwt = require("jsonwebtoken");
 const keys = require('../models/keys');
 // Load input validation
 
+
+
 const validateRegisterInput = require("../register");
 const validateLoginInput = require("../login");
+
 
 // Load User model
 
@@ -16,10 +19,12 @@ router.get("/", (req, res) => {
 
     User.find({})
    .then(users => res.send(users))
+
    .catch(console.error);
 
    
 })
+ 
 
 router.post('/register', (req, res) => {
     const {errors, isValid } = validateRegisterInput(req.body)
@@ -101,3 +106,4 @@ router.post('/login', (req, res) => {
 })
 
 module.exports = router
+
