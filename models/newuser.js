@@ -3,7 +3,7 @@
 const mongoose = require("../db/connection");
 const Schema = mongoose.Schema;
 
-const  User1Schema = new Schema({
+const  NewuserSchema = new Schema({
    balance: {type: Number, default: 1000},
    username: String,
    password: String,
@@ -12,6 +12,6 @@ const  User1Schema = new Schema({
 
 })
 
-const User1 = mongoose.model("User1", User1Schema)
+const Newuser = mongoose.model("Newuser", NewuserSchema)
 
-module.exports = User1
+module.exports = Newuser

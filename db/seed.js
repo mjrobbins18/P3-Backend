@@ -2,12 +2,12 @@ const assetsData = require('./assets.json')
 const collectionsData = require('./collections.json')
 const contractsData = require('./contracts.json')
 const usersData = require('./users.json')
-const user1Data = require('./user1.json')
+const newuserData = require('./newuser.json')
 //--------------------------------------------------------------------------------------------------
 const NFT = require('../models/nft')
 const Collect = require('../models/collections')
 const User = require('../models/user')
-const User1 = require('../models/user1')
+const Newuser = require('../models/newuser')
 const Contract = require('../models/contract')
 //---------------------------------------------------------------------------------------------------
 
@@ -30,19 +30,19 @@ const Contract = require('../models/contract')
 
 
 
-NFT.deleteMany({})
-    .then(() => NFT.insertMany(assetsData))
-    .then(console.log)
-    .catch(console.error)
-    .finally(() => process.exit())
+// NFT.deleteMany({})
+//     .then(() => NFT.insertMany(assetsData))
+//     .then(console.log)
+//     .catch(console.error)
+//     .finally(() => process.exit())
 
 
 
-Collect.deleteMany({})
-    .then(() => Collect.insertMany(collectionsData))
-    .then(console.log)
-    .catch(console.error)
-    .finally(() => process.exit())
+// Collect.deleteMany({})
+//     .then(() => Collect.insertMany(collectionsData))
+//     .then(console.log)
+//     .catch(console.error)
+//     .finally(() => process.exit())
 
 
 
@@ -52,11 +52,11 @@ Collect.deleteMany({})
 //     .catch(console.error)
 //     .finally(()=> process.exit())
 
-// User1.deleteMany({})
-// .then(() => User1.insertMany(user1Data))
-// .then(console.log)
-// .catch(console.error)
-// .finally(()=> process.exit())
+Newuser.deleteMany({})
+.then(() => Newuser.insertMany(newuserData))
+.then(console.log)
+.catch(console.error)
+.finally(()=> process.exit())
 
 
 
