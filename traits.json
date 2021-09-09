@@ -1,0 +1,435 @@
+[{
+    "id": 44574188,
+    "traits": [
+        {
+            "trait_type": "Body",
+            "value": "Avocado green",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 113054,
+            "order": null
+        },
+        {
+            "trait_type": "Mouth accessories",
+            "value": "Clinical thermometer",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 55102,
+            "order": null
+        },
+        {
+            "trait_type": "Clothing",
+            "value": "Cape",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 58995,
+            "order": null
+        },
+        {
+            "trait_type": "Body accessories",
+            "value": "Tie",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 52188,
+            "order": null
+        },
+        {
+            "trait_type": "Ground",
+            "value": "Ground",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 169983,
+            "order": null
+        },
+        {
+            "trait_type": "Background color",
+            "value": "Gray",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 26244,
+            "order": null
+        },
+        {
+            "trait_type": "Eye accessories",
+            "value": "Eyepatch",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 51189,
+            "order": null
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Worried",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45866,
+            "order": null
+        },
+        {
+            "trait_type": "Nut",
+            "value": "Standard",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 55233,
+            "order": null
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Questioning",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 16956,
+            "order": null
+        },
+        {
+            "trait_type": "Headgear",
+            "value": "Cap",
+            "display_type": null,
+            "max_value": null,
+          "trait_count": 63931,
+            "order": null
+        }
+    ]
+},
+{
+    "id": 44574187,
+    "traits": []
+},
+{
+    "id": 44574183,
+    "traits": []
+},
+{
+    "id": 44574164,
+    "traits": []
+},
+{
+    "id": 44574160,
+    "traits": []
+},
+{
+    "id": 44574159,
+    "traits": []
+},
+{
+    "id": 44574153,
+    "traits": []
+},
+{
+    "id": 44574152,
+    "traits": [
+        {
+            "trait_type": "Skin",
+            "value": "Aurora",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 169,
+            "order": null
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Stubble Party Horn",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 189,
+            "order": null
+        },
+        {
+            "trait_type": "Shirt",
+            "value": "None",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1438,
+            "order": null
+        },
+        {
+            "trait_type": "Antlers",
+            "value": "Flat Brown",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1565,
+            "order": null
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Cry",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 302,
+            "order": null
+        },
+        {
+            "trait_type": "Background",
+            "value": "Olive Green",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 736,
+            "order": null
+        },
+        {
+            "trait_type": "Hat",
+            "value": "None",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 2989,
+            "order": null
+        }
+    ]
+},
+{
+    "id": 44574151,
+    "traits": []
+},
+{
+    "id": 44574145,
+    "traits": []
+},
+{
+    "id": 44574143,
+    "traits": []
+},
+{
+    "id": 44574136,
+    "traits": [
+        {
+            "trait_type": "Hair",
+            "value": "Mohican",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 93,
+            "order": null
+        },
+        {
+            "trait_type": "Costume",
+            "value": "Black Suit",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 145,
+            "order": null
+        },
+        {
+            "trait_type": "Character",
+            "value": "Skull",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 152,
+            "order": null
+        },
+        {
+            "trait_type": "Accessory",
+            "value": "Glasses & Mask",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 59,
+            "order": null
+        }
+    ]
+},
+{
+    "id": 44574133,
+    "traits": []
+},
+{
+    "id": 44574126,
+    "traits": []
+},
+{
+    "id": 44574125,
+    "traits": [
+        {
+            "trait_type": "Tomatoes",
+            "value": "Cyan Tomatoes",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 147,
+            "order": null
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Kawaii Eyes",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 292,
+            "order": null
+        },
+        {
+            "trait_type": "Lettuce",
+            "value": "Red Lettuce",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 143,
+            "order": null
+        },
+        {
+            "trait_type": "Buns",
+            "value": "Brown Buns",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 126,
+            "order": null
+        },
+        {
+            "trait_type": "Patty",
+            "value": "White Patty",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 129,
+            "order": null
+        }
+    ]
+},
+{
+    "id": 44574124,
+    "traits": []
+},
+{
+    "id": 44574123,
+    "traits": []
+},
+{
+    "id": 44574122,
+    "traits": []
+},
+{
+    "id": 44574121,
+    "traits": [
+        {
+            "trait_type": "Gender ",
+            "value": "Male",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 0,
+            "order": null
+        },
+        {
+            "trait_type": "Background Color ",
+            "value": "Light Blue",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 0,
+            "order": null
+        },
+        {
+            "trait_type": "Stars",
+            "value": "8",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 0,
+            "order": null
+        },
+        {
+            "trait_type": "Asteroid ",
+            "value": "3",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 0,
+            "order": null
+        },
+        {
+            "trait_type": "Quantity ",
+            "value": 1,
+            "display_type": null,
+            "max_value": "1",
+            "trait_count": 0,
+            "order": null
+        }
+    ]
+},
+{
+    "id": 44574119,
+    "traits": []
+},
+{
+    "id": 44574118,
+    "traits": [
+        {
+            "trait_type": "Edition",
+            "value": "44/50",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 0,
+            "order": null
+        },
+        {
+            "trait_type": "Edition Number",
+            "value": "44",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 0,
+            "order": null
+        },
+        {
+            "trait_type": "Boxer",
+            "value": "Super Macho Man",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 15,
+            "order": null
+        },
+        {
+            "trait_type": "Circuit",
+            "value": "World Circuit",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 46,
+            "order": null
+        },
+        {
+            "trait_type": "Backround ",
+            "value": "Blue ",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 46,
+            "order": null
+        }
+    ]
+},
+{
+    "id": 44574117,
+    "traits": []
+},
+{
+    "id": 44574116,
+    "traits": [
+        {
+            "trait_type": "Background",
+            "value": "blue",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 15,
+            "order": null
+        },
+        {
+            "trait_type": "Face",
+            "value": "purple",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 17,
+            "order": null
+        },
+        {
+            "trait_type": "Skin",
+            "value": "pink",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 19,
+            "order": null
+        },
+        {
+            "trait_type": "Shoes",
+            "value": "purple",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 15,
+            "order": null
+        }
+    ]
+},
+{
+    "id": 44574115,
+    "traits": []
+},
+{
+    "id": 44574113,
+    "traits": []
+}]
