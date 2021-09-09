@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-
+const Collection = require('../models/collections')
 const NFT = require('../models/nft')
 
 //INDEX Route
@@ -14,6 +14,13 @@ router.get("/", (req, res) => {
 
    
 })
+//get collections
+router.get('/collections', (req, res) => {
+    Collection.find({})
+    .then(collects => res.send(collects))
+    .catch(console.error)
+})
+
 //Create Route
 //----------------------------------------------------------------------
 router.post('/new', (req, res) => {
@@ -49,7 +56,8 @@ router.get('/:id', (req, res) => {
 // show nft by name
 
 router.get('/name/:name', (req, res) => {
-    NFT.find({name: req.params.name})
+    NFT.find({ name: { $regex: req.params.name, $options: "i" }})
+    
     .then(nfts => {
         res.json(nfts)
     })

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+
 url = "mongodb+srv://dbUser:n6DaQ5TP7VjQ76m@cluster0.i0e2s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 const mongoURI =
   process.env.NODE_ENV === 'production'
@@ -7,7 +8,7 @@ const mongoURI =
 
 mongoose.Promise = Promise
 
-mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false,})
+mongoose.connect('mongodb://localhost/NFTMarket', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false,})
 
 .then((conn) => {
 	console.log(`connected to mongodb on ${conn.connections[0].name} db`)

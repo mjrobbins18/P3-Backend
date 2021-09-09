@@ -20,7 +20,8 @@ const  NFTSchema = new Schema({
     opensea_seller_fee_basis_points: String,
     payout_address: String,
     slug: String,
-    twitter_username: String
+    twitter_username: String,
+    price: {type: Number, default: 20}
 })
 
 
