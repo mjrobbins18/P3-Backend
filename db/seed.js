@@ -11,22 +11,22 @@ const User1 = require('../models/user1')
 const Contract = require('../models/contract')
 //---------------------------------------------------------------------------------------------------
 
-const userData = usersData.map (
-    item =>
-      item.owner.username &&
-        item.owner.profile_img_url &&
-        item.seller.username &&
-        item.seller.profile_img_url &&
-        item.seller.address
-        ? {
-            ownerUsername: item.owner.username,
-            ownerPic: item.owner.profile_img_url,
-            creatorUsername: item.seller.username,
-            creatorPic: item.seller.profile_img_url,
-            creatorAddress: item.seller.address
-          }
-        : null
-  );
+// const userData = usersData.map (
+//     item =>
+//       item.owner.username &&
+//         item.owner.profile_img_url &&
+//         item.seller.username &&
+//         item.seller.profile_img_url &&
+//         item.seller.address
+//         ? {
+//             ownerUsername: item.owner.username,
+//             ownerPic: item.owner.profile_img_url,
+//             creatorUsername: item.seller.username,
+//             creatorPic: item.seller.profile_img_url,
+//             creatorAddress: item.seller.address
+//           }
+//         : null
+//   );
 
 
 
@@ -38,25 +38,25 @@ NFT.deleteMany({})
 
 
 
-Collect.deleteMany({})
-    .then(() => Collect.insertMany(collectionsData))
-    .then(console.log)
-    .catch(console.error)
-    .finally(() => process.exit())
-
-
-
-// User.deleteMany({})
-//     .then(() => User.insertMany(userData))
+// Collect.deleteMany({})
+//     .then(() => Collect.insertMany(collectionsData))
 //     .then(console.log)
 //     .catch(console.error)
-//     .finally(()=> process.exit())
+//     .finally(() => process.exit())
 
-// User1.deleteMany({})
-// .then(() => User1.insertMany(user1Data))
-// .then(console.log)
-// .catch(console.error)
-// .finally(()=> process.exit())
+
+
+User.deleteMany({})
+    .then(() => User.insertMany(userData))
+    .then(console.log)
+    .catch(console.error)
+    .finally(()=> process.exit())
+
+User1.deleteMany({})
+.then(() => User1.insertMany(user1Data))
+.then(console.log)
+.catch(console.error)
+.finally(()=> process.exit())
 
 
 
