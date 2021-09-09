@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const  NFTSchema = new Schema({
     token_id: String,
     background_color: String,
-    image_url: {type: String, default: "https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png"},
+    image_url: String,
     animation_url: String,
     animation_original_url: String,
     name: String,
