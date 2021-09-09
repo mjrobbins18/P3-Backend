@@ -1,96 +1,109 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const keys = require('../models/keys');
+// Load input validation
 
-const Newuser = require('../models/newuser')
 
-//INDEX Route
-//-------------------------------------------------------------------
+
+const validateRegisterInput = require("../register");
+const validateLoginInput = require("../login");
+
+
+// Load User model
+
+const User = require('../models/user1')
+
 router.get("/", (req, res) => {
 
-    Newuser.find({})
-   .then(newusers => res.send(newusers))
+    User.find({})
+   .then(users => res.send(users))
+
    .catch(console.error);
 
    
 })
+ 
 
-router.get('/collections', (req, res) => {
-    Newuser.find({})
-    .then(newusers => res.send(newusers))
-    .catch(console.error)
-})
+router.post('/register', (req, res) => {
+    const {errors, isValid } = validateRegisterInput(req.body)
+    if(!isValid) {
+        return res.status(400).json(errors)
+    }
 
-//Create Route
-//----------------------------------------------------------------------
-router.post('/new', (req, res) => {
-    
-    console.log(req.body)
-    console.log("hello")
-    Newuser.create(req.body)
-        .then((newusers) => {
-            res.json(newusers)
-            console.log(req.body)
-            console.log("hello")
+
+User.findOne({ username: req.body.username}) 
+.then(user => {
+    if (user) {
+        return res.status(400).json({ username: "Username already exists"
+    })
+    }else {
+        const newUser = new User ({
+            username: req.body.username,
+            password: req.body.password,
+            balance: 1000,
+            trophies: [""],
+            created: [""]
         })
-        .catch(console.error)
+        bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(newUser.password, salt, (err, hash) => {
+                if (err) throw err;
+                newUser.password = hash
+                newUser
+                .save()
+                .then(user => res.json(user))
+                .catch(err => console.log(err))
+            })
+        })
+    }
+    
     })
 
-//--------------------------------------------------------------------
-
-
-//Show 1 Specific Newuser (Must Be Last Get Route)
-
-router.get('/:id', (req, res) => {
-    
-    console.log(`params ID: ${req.params.id}`)
-    Newuser.findById(req.params.id)
-        .then( newusers => {
-            res.send(newusers)
-        })
-        .catch(whoops => {
-            console.error(whoops)
-            res.send("something has gone terribly wrong!")
-        })
 })
-// show nft by name
 
-router.get('/name/:name', (req, res) => {
-    Newuser.find({ name: { $regex: req.params.name, $options: "i" }})
-    
-    .then(newusers => {
-        res.json(newusers)
+
+router.post('/login', (req, res) => {
+    const { errors, isValid } = validateLoginInput(req.body)
+    if(!isValid) {
+        return res.status(400).json(errors)
+    }
+    const username = req.body.username
+    const password = req.body.password
+
+    User.findOne({ username }).then(user => {
+        if (!user) {
+            return res.status(404).json({emailnotfound: "email not found"})
+        }
+
+        bcrypt.compare(password, user.password)
+        .then(isMatch => {
+            if(isMatch) {
+                const payload = {
+                    id: user.id,
+                    username: user.username
+                }
+                jwt.sign(
+                    payload,
+                    keys.secretOrkey,
+                    {
+                        expiresIn: 958209485094
+                    },
+                    (err,token) => {
+                        res.json({
+                            success: true,
+                            token: "Bearer" + token
+                        })
+                    }
+                )
+            } else {
+                return res
+                .status(400)
+                .json({ passwordincorrect: "Password incorrect"})
+            }
+        })
     })
-    .then(req => console.log(req))
-    .catch(console.error)
 })
 
-//Edit Newuser
-//------------------------------------------------------------------------
+module.exports = router
 
-router.put('/:id' ,(req, res) => {
-   
-    Newuser.findOneAndUpdate(
-        {_id: req.params.id},
-        req.body,
-        {new: true}
-    )
-        .then( newusers => {
-            res.json(newusers)
-        })
-        .then(req => console.log(req.body))
-        .catch(console.error)
-        })
-
-//---------------------------------------------------------------------------------
-// //Delete Newuser  Routes
-
-router.delete('/:id', (req, res) => {
-    Newuser.findByIdAndDelete({_id: req.params.id})
-        .then((newusers) => {
-            res.json(newusers)
-        })
-        .then((req) => console.log(req))
-        .catch(console.error)
-})
-
-    module.exports = router   
