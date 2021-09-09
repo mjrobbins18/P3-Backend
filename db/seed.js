@@ -30,19 +30,19 @@ const Contract = require('../models/contract')
 
 
 
-// NFT.deleteMany({})
-//     .then(() => NFT.insertMany(assetsData))
-//     .then(console.log)
-//     .catch(console.error)
-//     .finally(() => process.exit())
+NFT.deleteMany({})
+    .then(() => NFT.insertMany(assetsData))
+    .then(console.log)
+    .catch(console.error)
+    .finally(() => process.exit())
 
 
 
-// Collect.deleteMany({})
-//     .then(() => Collect.insertMany(collectionsData))
-//     .then(console.log)
-//     .catch(console.error)
-//     .finally(() => process.exit())
+Collect.deleteMany({})
+    .then(() => Collect.insertMany(collectionsData))
+    .then(console.log)
+    .catch(console.error)
+    .finally(() => process.exit())
 
 
 
@@ -52,11 +52,11 @@ const Contract = require('../models/contract')
 //     .catch(console.error)
 //     .finally(()=> process.exit())
 
-User1.deleteMany({})
-.then(() => User1.insertMany(user1Data))
-.then(console.log)
-.catch(console.error)
-.finally(()=> process.exit())
+// User1.deleteMany({})
+// .then(() => User1.insertMany(user1Data))
+// .then(console.log)
+// .catch(console.error)
+// .finally(()=> process.exit())
 
 
 
