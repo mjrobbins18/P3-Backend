@@ -4,10 +4,10 @@ const mongoose = require("../db/connection");
 const Schema = mongoose.Schema;
 
 const  User1Schema = new Schema({
-   Balance: Number,
-   userName: String,
+   balance: {type: Number, default: 1000},
+   username: String,
    password: String,
-   Trophies: [String],
+   trophies: [String],
    created: [String]
 
 })
