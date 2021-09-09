@@ -21,7 +21,7 @@ require("./models/passport")(passport)
 
 
 // controllers go here
-const nftsController = require('./controllers/nfts')
+// const nftsController = require('./controllers/nfts')
 const usersController = require('./controllers/users')
 
 const nftjsonController = require('./controllers/nftjson')
@@ -30,7 +30,7 @@ const nftSendsController = require('./controllers/nftsends')
 
 
 const users = require('./controllers/users')
-app.use('/nftmarketplace', nftsController)
+// app.use('/nftmarketplace', nftsController)
 app.use('/api/users', users)
 //login token
 
@@ -41,8 +41,8 @@ app.use('/login', (req,res) => {
 } )
 
 // app.use('/nftmarketplace', nftjsonController)
-// app.use('/nftmarketplace', nftSendsController)
-app.use('/nftmarketplace', usersController)
+app.use('/nftmarketplace', nftSendsController)
+// app.use('/nftmarketplace', usersController)
 /* END CONTROLLERS HERE */
 
 app.set('port', process.env.PORT || 8001);
