@@ -4,13 +4,15 @@ const router = express.Router ();
 const Collection = require ('../models/collections');
 // const NFT = require ('../models/nft');
 const NFTNew = require ('../models/nftNew');
+const newUser = require('../models/newuser')
+
 //INDEX Route
 //-------------------------------------------------------------------
 // router.get ('/', (req, res) => {
 //   NFT.find ({}).then (nfts => res.send (nfts)).catch (console.error);
 // });
 //NFTNew inclusion ------------ 
-router.get ('/', (req, res) => {
+router.get ('/newfind', (req, res) => {
   NFTNew.find ({}).then (nftnews => res.send (nftnews)).catch (console.error);
 });
 //get collections
@@ -34,13 +36,13 @@ router.get ('/', (req, res) => {
 //     .catch (console.error);
 // });
 //NFTNew inclusion ------------ 
-router.post ('/', (req, res) => {
-  console.log (req.body);
+router.post ('/new', (req, res) => {
+  console.log (req.body.image_url);
   console.log ('hello');
   NFTNew.create (req.body)
     .then (nftnews => {
       res.json (nftnews);
-      console.log (req.body);
+      console.log (req.body.image_url);
       console.log ('hello');
     })
     .catch (console.error);
@@ -62,7 +64,7 @@ router.get ('/:id', (req, res) => {
     });
 });
 //NFTNew inclusion ------------ 
-router.get ('/:id', (req, res) => {
+router.get ('/new/:id', (req, res) => {
   console.log (`params ID: ${req.params.id}`);
   NFTNew.findById (req.params.id)
     .then (nfts => {
@@ -84,7 +86,7 @@ router.get ('/name/:name', (req, res) => {
     .catch (console.error);
 });
 //NFTNew inclusion ------------ 
-router.get ('/name/:name', (req, res) => {
+router.get ('/new/name/:name', (req, res) => {
   NFTNew.find ({name: {$regex: req.params.name, $options: 'i'}})
     .then (nfts => {
       res.json (nfts);
@@ -92,6 +94,8 @@ router.get ('/name/:name', (req, res) => {
     .then (req => console.log (req))
     .catch (console.error);
 });
+
+
 
 //Edit NFT
 //------------------------------------------------------------------------
@@ -105,7 +109,7 @@ router.get ('/name/:name', (req, res) => {
 //     .catch (console.error);
 // });
 //NFTNew inclusion ------------ 
-router.put ('/:id', (req, res) => {
+router.put ('/new/:id', (req, res) => {
   NFTNew.findOneAndUpdate ({_id: req.params.id}, req.body, {new: true})
     .then (nftnews => {
       res.json (nftnews);
@@ -126,7 +130,7 @@ router.put ('/:id', (req, res) => {
 //     .catch (console.error);
 // });
 //NFTNew inclusion ------------ 
-router.delete ('/:id', (req, res) => {
+router.delete ('/new/:id', (req, res) => {
   NFTNew.findByIdAndDelete ({_id: req.params.id})
     .then (nftnews => {
       res.json (nftnews);

@@ -11,7 +11,7 @@ const validateRegisterInput = require("../register");
 const validateLoginInput = require("../login");
 
 
-// Load User model
+// get users
 
 const User = require('../models/newuser')
 
@@ -24,6 +24,16 @@ router.get("/", (req, res) => {
 
    
 })
+//get user by usernamename
+router.get ('/username/:username', (req, res) => {
+    User.find ({username:req.params.username})
+      .then (user => {
+        res.json (user);
+      })
+      .then (req => console.log (req))
+      .catch (console.error);
+  });
+
  
 
 router.post('/register', (req, res) => {
