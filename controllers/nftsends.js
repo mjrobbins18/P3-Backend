@@ -2,7 +2,7 @@ const express = require ('express');
 const router = express.Router ();
 
 const Collection = require ('../models/collections');
-// const NFT = require ('../models/nft');
+const NFT = require ('../models/nft');
 const NFTNew = require ('../models/nftNew');
 const newUser = require('../models/newuser')
 
@@ -15,6 +15,9 @@ const newUser = require('../models/newuser')
 router.get ('/newfind', (req, res) => {
   NFTNew.find ({}).then (nftnews => res.send (nftnews)).catch (console.error);
 });
+router.get ('/findnft', (req, res) => {
+    NFT.find({}).then(nfts => res.send(nfts))
+})
 //get collections
 // router.get ('/collections', (req, res) => {
 //   Collection.find ({})
@@ -37,8 +40,6 @@ router.get ('/newfind', (req, res) => {
 // });
 //NFTNew inclusion ------------ 
 router.post ('/new', (req, res) => {
-  console.log (req.body.image_url);
-  console.log ('hello');
   NFTNew.create (req.body)
     .then (nftnews => {
       res.json (nftnews);
@@ -52,7 +53,7 @@ router.post ('/new', (req, res) => {
 
 //Show 1 Specific NFT (Must Be Last Get Route)
 
-router.get ('/:id', (req, res) => {
+router.get ('/nft/:id', (req, res) => {
   console.log (`params ID: ${req.params.id}`);
   NFT.findById (req.params.id)
     .then (nfts => {
@@ -138,5 +139,16 @@ router.delete ('/new/:id', (req, res) => {
     .then (req => console.log (req))
     .catch (console.error);
 });
+router.delete ('/nft/:id', (req, res) => {
+    NFT.findByIdAndDelete ({_id: req.params.id})
+      .then (nftnews => {
+        res.json (nftnews);
+      })
+      .then (req => console.log (req))
+      .catch (console.error);
+  });
+
+
+
 
 module.exports = router;

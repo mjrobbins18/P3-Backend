@@ -117,3 +117,31 @@ router.post('/login', (req, res) => {
 
 module.exports = router
 
+//update created NFTS
+router.put ('/newNFT/:id', (req, res) => {
+    User.findOneAndUpdate ({_id: req.params.id}, {$push: {created:req.body}}, {new: true})
+      .then (user => {
+        res.json (user);
+      })
+      .then (req => console.log(req.body))
+      .catch (console.error);
+  });
+// delete created NFT
+router.delete('/userNFT/:id', (req,res) => {
+    User.findOneAndDelete({_id: req.params.id}, {$pull:{created:req.body}})
+    .then (nft => {
+        res.json (nft);
+      })
+      .then (req => console.log (req))
+      .catch (console.error);
+})
+
+//update Trophies
+router.put ('/newTrophy/:id', (req, res) => {
+    User.findOneAndUpdate ({_id: req.params.id}, {$push: {trophies:req.body}}, {new: true})
+      .then (user => {
+        res.json (user);
+      })
+      .then (req => console.log (req.body))
+      .catch (console.error);
+  });

@@ -7,8 +7,8 @@ const  NewuserSchema = new Schema({
    balance: {type: Number, default: 1000},
    username: String,
    password: String,
-   trophies: [String],
-   created: [String]
+   trophies: [Object],
+   created: [Object]
 
 })
 
