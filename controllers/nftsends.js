@@ -18,12 +18,12 @@ router.get ('/newfind', (req, res) => {
 router.get ('/findnft', (req, res) => {
     NFT.find({}).then(nfts => res.send(nfts))
 })
-//get collections
-// router.get ('/collections', (req, res) => {
-//   Collection.find ({})
-//     .then (collects => res.send (collects))
-//     .catch (console.error);
-// });
+// get collections
+router.get ('/collections', (req, res) => {
+  Collection.find ({})
+    .then (collects => res.send (collects))
+    .catch (console.error);
+});
 
 //Create Route
 //----------------------------------------------------------------------
