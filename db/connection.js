@@ -10,7 +10,7 @@ const mongoURI =
 mongoose.Promise = Promise
 
 
-mongoose.connect(url , { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false,})
+mongoose.connect(mongoURI , { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false,})
 
 
 .then((conn) => {
